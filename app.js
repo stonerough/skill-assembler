@@ -170,7 +170,7 @@ This is non-negotiable because the output will be:
 - Pasted into systems expecting ASCII/plain text
 
 **Required plain text rules:**
-1. **Apostrophes**: Use only straight apostrophes: \` (not curly quotes)
+1. **Apostrophes**: Use only straight apostrophes: ' (not curly quotes)
 2. **Quotation marks**: Use only straight quotes: " (not smart quotes)
 3. **Dashes**: Use single hyphens - or double hyphens -- (never em dashes or en dashes)
 4. **Ellipsis**: Use three periods ... (not the ellipsis character)
@@ -525,10 +525,7 @@ function initializeUI() {
 }
 
 function attachEventListeners() {
-  // Region selector
   document.getElementById('region-select').addEventListener('change', handleRegionChange);
-
-  // Download button
   document.getElementById('download-btn').addEventListener('click', handleDownload);
 }
 
@@ -562,7 +559,6 @@ function renderPersonalisationForm() {
   const form = document.getElementById('personalisation-form');
   const section = document.getElementById('personalisation-section');
 
-  // Get unique placeholders from selected skills
   const placeholders = getRequiredPlaceholders();
 
   if (placeholders.size === 0) {
@@ -573,7 +569,6 @@ function renderPersonalisationForm() {
   section.style.display = 'block';
   form.innerHTML = '';
 
-  // Render fields in order
   const fieldOrder = ['FULL_NAME', 'JOB_TITLE', 'TEAM_OR_UNIT', 'ORGANISATION', 'PHONE', 'COUNTRY'];
   
   fieldOrder.forEach(placeholder => {
@@ -598,7 +593,6 @@ function createFormField(placeholder) {
   input.name = placeholder;
   input.value = state.userInputs[placeholder] || '';
 
-  // Special handling for COUNTRY field
   if (placeholder === 'COUNTRY') {
     input.value = state.userInputs[placeholder] || REGIONAL_DEFAULTS[state.selectedRegion].country;
     input.addEventListener('input', () => {
@@ -611,7 +605,6 @@ function createFormField(placeholder) {
     });
   }
 
-  // Add hint for phone field
   if (placeholder === 'PHONE') {
     const hint = document.createElement('small');
     hint.textContent = REGIONAL_DEFAULTS[state.selectedRegion].phoneHint;
@@ -649,14 +642,12 @@ function handleRegionChange(e) {
 }
 
 function updateRegionDefaults() {
-  // Update COUNTRY field if it exists and hasn't been manually edited
   const countryInput = document.getElementById('field-COUNTRY');
   if (countryInput && !state.countryFieldTouched) {
     countryInput.value = REGIONAL_DEFAULTS[state.selectedRegion].country;
     state.userInputs.COUNTRY = countryInput.value;
   }
 
-  // Update phone hint
   const phoneHint = document.getElementById('phone-hint');
   if (phoneHint) {
     phoneHint.textContent = REGIONAL_DEFAULTS[state.selectedRegion].phoneHint;
@@ -670,7 +661,6 @@ function handleSkillSelection(skillId, isSelected) {
     state.selectedSkills.delete(skillId);
   }
 
-  // Update form and download button
   renderPersonalisationForm();
   updateDownloadButton();
 }
@@ -720,16 +710,9 @@ function processSkillContent(skillId) {
     throw new Error(`SKILL content not found: ${skillId}`);
   }
 
-  // Step 1: Apply regional filtering
   content = applyRegionalFiltering(content, state.selectedRegion);
-
-  // Step 2: Apply placeholder substitutions
   content = applyPlaceholderSubstitution(content);
-
-  // Step 3: Remove lines with unfilled placeholders
   content = removeIncompleteLines(content);
-
-  // Step 4: Clean output
   content = cleanOutput(content);
 
   return content;
@@ -739,11 +722,103 @@ function applyRegionalFiltering(content, region) {
   const lines = content.split('\n');
   const result = [];
   let inRegionBlock = false;
-  let currentRegion = null;
   let keepBlock = false;
 
   for (let line of lines) {
-    // Check for region start marker
     const startMatch = line.match(/<!--\s*REGION:(\w+)\s*-->/);
     if (startMatch) {
-      inRegionBlock =
+      inRegionBlock = true;
+      keepBlock = (startMatch[1] === region);
+      continue;
+    }
+
+    if (line.match(/<!--\s*END:REGION\s*-->/)) {
+      inRegionBlock = false;
+      keepBlock = false;
+      continue;
+    }
+
+    if (!inRegionBlock || keepBlock) {
+      result.push(line);
+    }
+  }
+
+  return result.join('\n');
+}
+
+function applyPlaceholderSubstitution(content) {
+  let result = content;
+  
+  for (const [placeholder, value] of Object.entries(state.userInputs)) {
+    if (value && value.trim()) {
+      const pattern = new RegExp(`\\{\\{${placeholder}\\}\\}`, 'g');
+      result = result.replace(pattern, value.trim());
+    }
+  }
+  
+  return result;
+}
+
+function removeIncompleteLines(content) {
+  const lines = content.split('\n');
+  const result = lines.filter(line => !line.match(/\{\{[A-Z_]+\}\}/));
+  return result.join('\n');
+}
+
+function cleanOutput(content) {
+  let lines = content.split('\n');
+  
+  while (lines.length > 0 && lines[lines.length - 1].trim() === '') {
+    lines.pop();
+  }
+  
+  return lines.join('\n') + '\n';
+}
+
+async function generateAndDownloadZip() {
+  if (!window.JSZip) {
+    throw new Error('JSZip library not loaded');
+  }
+
+  const zip = new JSZip();
+
+  for (const skillId of state.selectedSkills) {
+    try {
+      const processedContent = processSkillContent(skillId);
+      zip.folder(skillId).file('SKILL.md', processedContent);
+    } catch (error) {
+      console.error(`Error processing ${skillId}:`, error);
+      throw new Error(`Failed to process SKILL "${skillId}": ${error.message}`);
+    }
+  }
+
+  const blob = await zip.generateAsync({ type: 'blob' });
+  
+  const now = new Date();
+  const timestamp = now.toISOString()
+    .replace(/[-:]/g, '')
+    .replace('T', '-')
+    .split('.')[0];
+  const filename = `my-skills-${timestamp}.zip`;
+
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  
+  setTimeout(() => URL.revokeObjectURL(url), 100);
+}
+
+function showMessage(text, type) {
+  const messageArea = document.getElementById('message-area');
+  messageArea.textContent = text;
+  messageArea.className = `message-area ${type}`;
+  messageArea.style.display = 'block';
+
+  setTimeout(() => {
+    messageArea.style.display = 'none';
+  }, 5000);
+}
