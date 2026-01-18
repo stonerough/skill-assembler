@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKILL Assembler</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SKILL Assembler</h1>
+            <p class="tagline">Personalise and package your Claude SKILLs</p>
+        </header>
+
+        <main>
+            <!-- Region Selector -->
+            <section class="region-section">
+                <h2>Select Your Region</h2>
+                <p class="hint">This sets default values and regional conventions for your SKILLs</p>
+                <div class="form-group">
+                    <label for="region-select">Region:</label>
+                    <select id="region-select">
+                        <option value="NZ">New Zealand</option>
+                        <option value="AU">Australia</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- SKILL Selector -->
+            <section class="skill-section">
+                <h2>Select SKILLs</h2>
+                <p class="hint">Choose one or more SKILLs to personalise and download</p>
+                <div id="skill-list" class="skill-list">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Personalisation Form -->
+            <section class="form-section" id="personalisation-section" style="display: none;">
+                <h2>Personalise Your SKILLs</h2>
+                <p class="hint">All fields are optional. Leave blank to omit from output.</p>
+                <form id="personalisation-form">
+                    <!-- Populated dynamically by JavaScript -->
+                </form>
+            </section>
+
+            <!-- Error/Success Messages -->
+            <div id="message-area" class="message-area" style="display: none;">
+                <!-- Messages inserted here -->
+            </div>
+
+            <!-- Download Button -->
+            <section class="download-section">
+                <button id="download-btn" class="download-btn" disabled>
+                    Build &amp; Download ZIP
+                </button>
+                <p class="privacy-notice">
+                    <strong>Privacy guarantee:</strong> All processing happens in your browser. 
+                    No data is sent to any server.
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/stonerough/skill-assembler" target="_blank">View on GitHub</a> |
+                Built with privacy in mind
+            </p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
