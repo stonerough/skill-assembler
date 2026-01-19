@@ -428,11 +428,26 @@ SUPPORTING INFORMATION:
 4. **Infer severity logically**: Suggest Critical, High, Medium, or Low based on impact.
 5. **No em dashes**: Use commas, colons, or parentheses instead.
 
+<!-- REGION:NZ -->
 6. **New Zealand conventions**: Use NZ English spelling and date formats (DD/MM/YYYY).
+<!-- END:REGION -->
+
+<!-- REGION:AU -->
 6. **Australian conventions**: Use Australian English spelling and date formats (DD/MM/YYYY).
+<!-- END:REGION -->
+
+<!-- REGION:UK -->
 6. **UK conventions**: Use British English spelling and date formats (DD/MM/YYYY).
+<!-- END:REGION -->
+
+<!-- REGION:US -->
 6. **US conventions**: Use US English spelling and date formats (MM/DD/YYYY).
+<!-- END:REGION -->
+
+<!-- REGION:CA -->
 6. **Canadian conventions**: Use Canadian English spelling and date formats (YYYY-MM-DD).
+<!-- END:REGION -->
+
 ## Output Presentation
 
 Present as plain text. After the main content, append the signature block:
@@ -737,14 +752,14 @@ function applyRegionalFiltering(content, region) {
   let keepBlock = false;
 
   for (let line of lines) {
-    const startMatch = line.match(//);
+    const startMatch = line.match(/<!--\s*REGION:(\w+)\s*-->/);
     if (startMatch) {
       inRegionBlock = true;
       keepBlock = (startMatch[1] === region);
       continue;
     }
 
-    if (line.match(//)) {
+    if (line.match(/<!--\s*END:REGION\s*-->/)) {
       inRegionBlock = false;
       keepBlock = false;
       continue;
