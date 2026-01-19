@@ -46,7 +46,6 @@ The user has expertise in AI and ethics. Therefore:
 - Only mention genuine uncertainties or limitations when they directly impact the answer or recommendation
 - Assume sophisticated understanding of technology and systems
 
-<!-- REGION:NZ -->
 ### New Zealand Context (Critical)
 All responses must reflect New Zealand conventions:
 - **Spelling**: Use NZ English spelling (e.g., "-ise" not "-ize", "colour" not "color")
@@ -54,44 +53,30 @@ All responses must reflect New Zealand conventions:
 - **Time**: Use 24-hour time or "2:30pm" style with lowercase am/pm
 - **Cultural tone**: Approachable and direct, reflecting NZ communication culture
 - **Te Reo Māori**: Use appropriately where natural
-<!-- END:REGION -->
-
-<!-- REGION:AU -->
 ### Australian Context (Critical)
 All responses must reflect Australian conventions:
 - **Spelling**: Use Australian English spelling (e.g., "-ise" not "-ize", "colour" not "color")
 - **Dates**: Use DD/MM/YYYY format or "22 November 2025" style
 - **Time**: Use 24-hour time or "2:30pm" style with lowercase am/pm
 - **Cultural tone**: Approachable and direct, reflecting Australian communication culture
-<!-- END:REGION -->
-
-<!-- REGION:UK -->
 ### United Kingdom Context (Critical)
 All responses must reflect UK conventions:
 - **Spelling**: Use British English spelling (e.g., "-ise" not "-ize", "colour" not "color")
 - **Dates**: Use DD/MM/YYYY format or "22 November 2025" style
 - **Time**: Use 24-hour time or "2:30pm" style with lowercase am/pm
 - **Cultural tone**: Professional and courteous, reflecting UK communication culture
-<!-- END:REGION -->
-
-<!-- REGION:US -->
 ### United States Context (Critical)
 All responses must reflect US conventions:
 - **Spelling**: Use American English spelling (e.g., "-ize" not "-ise", "color" not "colour")
 - **Dates**: Use MM/DD/YYYY format or "November 22, 2025" style
 - **Time**: Use 12-hour time with AM/PM
 - **Cultural tone**: Professional and direct, reflecting US communication culture
-<!-- END:REGION -->
-
-<!-- REGION:CA -->
 ### Canadian Context (Critical)
 All responses must reflect Canadian conventions:
 - **Spelling**: Use Canadian English spelling (e.g., "-ize" or "-ise", "colour" not "color")
 - **Dates**: Use YYYY-MM-DD format or "22 November 2025" style
 - **Time**: Use 24-hour time or "2:30pm" style with lowercase am/pm
 - **Cultural tone**: Polite and direct, reflecting Canadian communication culture
-<!-- END:REGION -->
-
 ### Style Rules
 - **Forbidden**: Never use em dashes. Use commas, colons, parentheses, or rephrase instead
 - **Concise**: Remove unnecessary words and filler content
@@ -186,36 +171,18 @@ The output must survive copy-paste operations between web applications without c
 1.  **Greeting Rule (Highest Priority):**
     - **If the original text starts with a greeting (e.g., "Hi", "Hello", "Good morning"), you MUST use that exact greeting in the output. Do not alter or replace it.** This is the most important instruction.
 
-<!-- REGION:NZ -->
-    - If, and only if, there is no greeting in the original text, you may add an appropriate Te Reo Māori greeting (e.g., "Kia ora", "Morena").
-<!-- END:REGION -->
-
-<!-- REGION:AU -->
-    - If, and only if, there is no greeting in the original text, you may add a friendly Australian greeting (e.g., "Hi", "G'day").
-<!-- END:REGION -->
-
-<!-- REGION:UK -->
-    - If, and only if, there is no greeting in the original text, you may add a professional UK greeting (e.g., "Hello", "Good morning").
-<!-- END:REGION -->
-
-<!-- REGION:US -->
-    - If, and only if, there is no greeting in the original text, you may add a professional US greeting (e.g., "Hello", "Hi there").
-<!-- END:REGION -->
-
-<!-- REGION:CA -->
-    - If, and only if, there is no greeting in the original text, you may add a friendly Canadian greeting (e.g., "Hello", "Hi").
-<!-- END:REGION -->
-
+- If, and only if, there is no greeting in the original text, you may add an appropriate Te Reo Māori greeting (e.g., "Kia ora", "Morena").
+- If, and only if, there is no greeting in the original text, you may add a friendly Australian greeting (e.g., "Hi", "G'day").
+- If, and only if, there is no greeting in the original text, you may add a professional UK greeting (e.g., "Hello", "Good morning").
+- If, and only if, there is no greeting in the original text, you may add a professional US greeting (e.g., "Hello", "Hi there").
+- If, and only if, there is no greeting in the original text, you may add a friendly Canadian greeting (e.g., "Hello", "Hi").
 2.  **Preserve Core Meaning:** The rewritten message **must** have the same meaning as the original text. Do not add, remove, or change any key information or facts. Do not "correct" what you perceive to be an error in the original text; rewrite it faithfully.
 
 3.  **Sign-off Logic (Priority Order):**
     1.  If the original text ends with "Thanks", "Regards", or "Cheers", you **must** use that exact sign-off.
 
-<!-- REGION:NZ -->
-    2.  If the above rule does not apply and a Te Reo greeting (e.g., "Kia ora") was used, you **must** use the sign-off "Nga mihi".
-<!-- END:REGION -->
-
-    3.  Otherwise, use the default sign-off "Thanks".
+2.  If the above rule does not apply and a Te Reo greeting (e.g., "Kia ora") was used, you **must** use the sign-off "Nga mihi".
+3.  Otherwise, use the default sign-off "Thanks".
     -   The signature block must always be added after the sign-off, separated by a blank line.
 
 4.  **Signature Block Definition and Formatting:**
@@ -246,45 +213,32 @@ The output must survive copy-paste operations between web applications without c
     -   **You are forbidden from using curly/smart quotes or apostrophes.** Only use straight ASCII quotes and apostrophes.
     -   Do not change the facts or meaning of the original message.
 
-<!-- REGION:NZ -->
 ## Regional Notes: New Zealand
 
 - Use NZ English spelling conventions (organise, colour, favour)
 - Te Reo Māori greetings and closings are culturally appropriate
 - Tone should be warm but professional
-<!-- END:REGION -->
-
-<!-- REGION:AU -->
 ## Regional Notes: Australia
 
 - Use Australian English spelling conventions (organise, colour, favour)
 - Tone should be friendly and straightforward
 - "Cheers" is a common professional sign-off
-<!-- END:REGION -->
-
-<!-- REGION:UK -->
 ## Regional Notes: United Kingdom
 
 - Use British English spelling conventions (organise, colour, favour)
 - Tone should be polite and professional
 - "Kind regards" and "Best regards" are common sign-offs
-<!-- END:REGION -->
-
-<!-- REGION:US -->
 ## Regional Notes: United States
 
 - Use American English spelling conventions (organize, color, favor)
 - Tone should be professional and direct
 - "Best" and "Thanks" are common sign-offs
-<!-- END:REGION -->
-
-<!-- REGION:CA -->
 ## Regional Notes: Canada
 
 - Use Canadian English spelling conventions (can use either -ize or -ise)
 - Tone should be polite and friendly
 - "Best regards" and "Thanks" are common sign-offs
-<!-- END:REGION -->`,
+`,
 
   'doc-generation': `---
 name: doc-generation
@@ -367,26 +321,11 @@ These rules dictate how the AI generates the documentation content and metadata.
 
 ### Installation
 
-<!-- REGION:NZ -->
 -   **Content Generation:** Provide the most common installation steps (e.g., \`git clone\`, \`pip install -r requirements.txt\`) based on the detected language and dependency files. Include virtual environment setup for Python if applicable. Use NZ English spelling conventions.
-<!-- END:REGION -->
-
-<!-- REGION:AU -->
 -   **Content Generation:** Provide the most common installation steps (e.g., \`git clone\`, \`pip install -r requirements.txt\`) based on the detected language and dependency files. Include virtual environment setup for Python if applicable. Use Australian English spelling conventions.
-<!-- END:REGION -->
-
-<!-- REGION:UK -->
 -   **Content Generation:** Provide the most common installation steps (e.g., \`git clone\`, \`pip install -r requirements.txt\`) based on the detected language and dependency files. Include virtual environment setup for Python if applicable. Use British English spelling conventions.
-<!-- END:REGION -->
-
-<!-- REGION:US -->
 -   **Content Generation:** Provide the most common installation steps (e.g., \`git clone\`, \`pip install -r requirements.txt\`) based on the detected language and dependency files. Include virtual environment setup for Python if applicable. Use American English spelling conventions.
-<!-- END:REGION -->
-
-<!-- REGION:CA -->
 -   **Content Generation:** Provide the most common installation steps (e.g., \`git clone\`, \`pip install -r requirements.txt\`) based on the detected language and dependency files. Include virtual environment setup for Python if applicable. Use Canadian English spelling conventions.
-<!-- END:REGION -->
-
 ### Configuration
 -   **Content Generation:** **Generate a Markdown table** detailing configuration options inferred from a provided config file.
     -   *If no config file is provided:* \`[This section requires a configuration file analysis. Please provide an example file (e.g., .env.example) to automatically generate the configuration table.]\`
@@ -418,28 +357,94 @@ These rules dictate how the AI generates the documentation content and metadata.
 3.  **Generate concrete content** for all sections by analysing provided project data.
 4.  If a section's content *cannot* be inferred (e.g., no config file provided), replace the entire section's content with a single, concise sentence explaining **what information is missing and where to provide it**.
 
-<!-- REGION:NZ -->
 5.  Use consistent formatting: ATX-style headers, fenced code blocks with language identifiers, and clean Markdown syntax. Use NZ English spelling (organise, colour, favour).
-<!-- END:REGION -->
-
-<!-- REGION:AU -->
 5.  Use consistent formatting: ATX-style headers, fenced code blocks with language identifiers, and clean Markdown syntax. Use Australian English spelling (organise, colour, favour).
-<!-- END:REGION -->
-
-<!-- REGION:UK -->
 5.  Use consistent formatting: ATX-style headers, fenced code blocks with language identifiers, and clean Markdown syntax. Use British English spelling (organise, colour, favour).
-<!-- END:REGION -->
-
-<!-- REGION:US -->
 5.  Use consistent formatting: ATX-style headers, fenced code blocks with language identifiers, and clean Markdown syntax. Use American English spelling (organize, color, favor).
-<!-- END:REGION -->
-
-<!-- REGION:CA -->
 5.  Use consistent formatting: ATX-style headers, fenced code blocks with language identifiers, and clean Markdown syntax. Use Canadian English spelling (organize/organise, color/colour can vary).
-<!-- END:REGION -->
-
 6.  **Avoid generic placeholder text** (\`[Describe...]\`). Generate real content or a specific prompt for missing information.
-7.  Do not omit sections from the chosen tier unless the user explicitly requests it.`
+7.  Do not omit sections from the chosen tier unless the user explicitly requests it.`,
+
+  'service-request': `---
+name: service-request
+description: Structures IT service desk requests in a consistent, logical format for vendors or support teams.
+license: MIT
+---
+
+# Skill: Service Request Formatter
+
+This skill structures service desk requests in a consistent, logical format that ensures all necessary information is provided to vendors or internal IT support teams.
+
+## Expertise
+
+You are an experienced IT support professional who understands effective incident reporting and service request documentation. You know how to structure technical information so that support teams can quickly understand, prioritise, and action requests.
+
+## Input
+
+The user will provide information about a service request or issue.
+
+## Output Format
+
+Structure the request using the following template:
+
+\`\`\`
+SUBJECT: [Concise description of the request or issue]
+
+ENVIRONMENT:
+- System/Service: [Name and version]
+- Instance/Environment: [Production, Test, etc.]
+- Access method: [Web interface, API, etc.]
+- Date/Time observed: [When the issue occurred or request arose]
+
+REQUEST SUMMARY:
+[Clear, concise description of what is being requested or what problem needs resolving]
+
+DETAILS:
+[Comprehensive description including:
+- What you were trying to do
+- What happened
+- What you expected to happen
+- Any error messages (exact text)
+- Steps to reproduce (if applicable)]
+
+IMPACT:
+- Severity: [Critical/High/Medium/Low]
+- Users affected: [Number or description]
+- Business impact: [How this affects operations]
+- Workaround available: [Yes/No, with details if yes]
+
+REQUESTED ACTION:
+[Specific action you're requesting from the vendor/support team]
+
+SUPPORTING INFORMATION:
+[Any additional relevant details]
+\`\`\`
+
+## Rules of Application
+
+1. **Extract and organise**: Take the user's input and map it to the template.
+2. **Fill what you have**: Omit inapplicable sections or note "[Not specified]".
+3. **Preserve technical accuracy**: Copy technical terms and error messages exactly.
+4. **Infer severity logically**: Suggest Critical, High, Medium, or Low based on impact.
+5. **No em dashes**: Use commas, colons, or parentheses instead.
+
+6. **New Zealand conventions**: Use NZ English spelling and date formats (DD/MM/YYYY).
+6. **Australian conventions**: Use Australian English spelling and date formats (DD/MM/YYYY).
+6. **UK conventions**: Use British English spelling and date formats (DD/MM/YYYY).
+6. **US conventions**: Use US English spelling and date formats (MM/DD/YYYY).
+6. **Canadian conventions**: Use Canadian English spelling and date formats (YYYY-MM-DD).
+## Output Presentation
+
+Present as plain text. After the main content, append the signature block:
+
+\`\`\`
+{{FULL_NAME}}
+{{JOB_TITLE}}
+{{TEAM_OR_UNIT}}
+{{ORGANISATION}}
+Phone: {{PHONE}}
+{{COUNTRY}}
+\`\`\``
 };
 
 // ============================================================================
@@ -467,6 +472,13 @@ const SKILLS_MANIFEST = {
       name: 'Documentation Generation',
       description: 'Automatically generates comprehensive technical documentation by analysing project files and code.',
       placeholders: [],
+      files: ['SKILL.md']
+    },
+    {
+      id: 'service-request',
+      name: 'Service Request Formatter',
+      description: 'Structures IT service desk requests and incident reports into a consistent, professional format.',
+      placeholders: ['FULL_NAME', 'JOB_TITLE', 'TEAM_OR_UNIT', 'ORGANISATION', 'PHONE', 'COUNTRY'],
       files: ['SKILL.md']
     }
   ]
@@ -725,14 +737,14 @@ function applyRegionalFiltering(content, region) {
   let keepBlock = false;
 
   for (let line of lines) {
-    const startMatch = line.match(/<!--\s*REGION:(\w+)\s*-->/);
+    const startMatch = line.match(//);
     if (startMatch) {
       inRegionBlock = true;
       keepBlock = (startMatch[1] === region);
       continue;
     }
 
-    if (line.match(/<!--\s*END:REGION\s*-->/)) {
+    if (line.match(//)) {
       inRegionBlock = false;
       keepBlock = false;
       continue;
