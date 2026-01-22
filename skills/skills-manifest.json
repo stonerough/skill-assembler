@@ -1,0 +1,112 @@
+{
+  "skills": [
+    {
+      "id": "nz-personal-context",
+      "title": "NZ Personal Context",
+      "description": "Establishes personal background, communication preferences, and regional conventions",
+      "file": "nz-personal-context.md",
+      "fields": [
+        {
+          "name": "AGE",
+          "label": "Age",
+          "type": "text",
+          "placeholder": "e.g., 35"
+        },
+        {
+          "name": "PROFESSIONAL_BACKGROUND",
+          "label": "Professional background",
+          "type": "textarea",
+          "placeholder": "Briefly describe your professional experience"
+        },
+        {
+          "name": "CURRENT_ROLE",
+          "label": "Current role/status",
+          "type": "text",
+          "placeholder": "e.g., Software Developer, Retired"
+        },
+        {
+          "name": "LOCATION",
+          "label": "Location",
+          "type": "text",
+          "placeholder": "e.g., Auckland, Wellington"
+        },
+        {
+          "name": "TECHNICAL_ENVIRONMENT",
+          "label": "Primary technical environment",
+          "type": "text",
+          "placeholder": "e.g., Linux/Firefox, macOS/Safari"
+        },
+        {
+          "name": "AREAS_OF_EXPERTISE",
+          "label": "Areas of expertise/interest",
+          "type": "textarea",
+          "placeholder": "List your key technical or professional areas"
+        }
+      ]
+    },
+    {
+      "id": "rewrite-communication",
+      "title": "Rewrite Communication",
+      "description": "Rewrites emails and messages in professional, regional-appropriate style",
+      "file": "rewrite-communication.md",
+      "fields": [
+        {
+          "name": "FULL_NAME",
+          "label": "Full name",
+          "type": "text",
+          "placeholder": "e.g., Jane Smith"
+        },
+        {
+          "name": "JOB_TITLE",
+          "label": "Job title",
+          "type": "text",
+          "placeholder": "e.g., Senior Developer"
+        },
+        {
+          "name": "ORGANISATION",
+          "label": "Organisation",
+          "type": "text",
+          "placeholder": "e.g., Acme Corp"
+        },
+        {
+          "name": "PHONE",
+          "label": "Phone number",
+          "type": "text",
+          "placeholder": "e.g., +64 21 123 4567"
+        },
+        {
+          "name": "EMAIL",
+          "label": "Email address",
+          "type": "email",
+          "placeholder": "e.g., jane@example.com"
+        },
+        {
+          "name": "PRONOUNS",
+          "label": "Pronouns",
+          "type": "text",
+          "placeholder": "e.g., she/her, they/them"
+        }
+      ]
+    },
+    {
+      "id": "documentation-generation",
+      "title": "Documentation Generation",
+      "description": "Automatically generates comprehensive technical documentation from project files",
+      "file": "documentation-generation.md",
+      "fields": [
+        {
+          "name": "DOCUMENTATION_STYLE",
+          "label": "Preferred documentation style",
+          "type": "text",
+          "placeholder": "e.g., Detailed, Concise, Tutorial-focused"
+        },
+        {
+          "name": "TARGET_AUDIENCE",
+          "label": "Target audience",
+          "type": "text",
+          "placeholder": "e.g., Developers, End users, System administrators"
+        }
+      ]
+    }
+  ]
+}
