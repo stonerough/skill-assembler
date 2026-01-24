@@ -1,10 +1,10 @@
 {
   "skills": [
     {
-      "id": "nz-personal-context",
-      "title": "NZ Personal Context",
+      "id": "personal-context",
+      "title": "Personal Context",
       "description": "Establishes personal background, communication preferences, and regional conventions",
-      "file": "nz-personal-context.md",
+      "file": "personal-context.md",
       "fields": [
         {
           "name": "AGE",
